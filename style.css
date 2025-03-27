@@ -1,0 +1,78 @@
+@import "utf-8";
+* {
+  font-family: "Noto Sans TC";
+}
+@font-face{
+  font-family: "Rawclue copy";
+  src: url("font/Rawclue copy.ttf") format("truetype");
+}
+@keyframes pop-up {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+body {
+  background-color: #fffff0;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.banner {
+  width: 85%; 
+  margin-top: 35px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  animation: pop-up 1s ease-out forwards;
+}
+
+.content {
+  display: flex;
+  gap: 30px;
+  padding-top: 10px;
+  animation: pop-up 1s ease-out forwards;
+}
+
+
+p{
+  font-family: "Rawclue copy", sans-serif;
+  color: #8dacd3;
+  font-size: 150px;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* 使用 flex 讓 li 項目橫向排列 */
+  gap: 20px; /* 控制 li 之間的間隔 */
+  margin-top: 55px;
+}
+
+ul li {
+  font-size: 24px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #525252;
+  transition: color 0.3s ease;
+}
+
+ul li a:hover {
+  color: #8dacd3;
+}
+
+a{
+  color: #525252;
+}
