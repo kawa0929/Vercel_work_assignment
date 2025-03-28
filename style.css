@@ -6,6 +6,7 @@
   font-family: "Rawclue copy";
   src: url("font/Rawclue copy.ttf") format("truetype");
 }
+
 @keyframes pop-up {
   0% {
     opacity: 0;
@@ -22,18 +23,20 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  background-color: #fffff0;
 }
 
 /* 只影響首頁的 banner */
 .home .banner {
   width: 85%;
+  max-width: 1200px; /* 限制最大寬度 */
   margin-top: 35px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   opacity: 0;
   animation: pop-up 1s ease-out forwards;
+  border-radius: 10px;
 }
 
 /* 只影響首頁的 content */
@@ -42,13 +45,16 @@ body {
   gap: 30px;
   padding-top: 10px;
   animation: pop-up 1s ease-out forwards;
+  align-items: center;
+  flex-direction: column; /* 預設是直排（適合手機） */
+  text-align: center;
 }
 
 /* 只影響首頁的 p 樣式 */
 .home p {
   font-family: "Rawclue copy", sans-serif;
   color: #8dacd3;
-  font-size: 150px;
+  font-size: 100px; /* 調整預設大小 */
   margin: 0;
 }
 
@@ -59,7 +65,9 @@ body {
   margin: 0;
   display: flex;
   gap: 20px;
-  margin-top: 55px;
+  flex-direction: column; /* 預設是直排 */
+  align-items: center;
+  margin-top: 30px;
 }
 
 /* 只影響首頁的選單項目 */
@@ -72,6 +80,8 @@ body {
   text-decoration: none;
   color: #525252;
   transition: color 0.3s ease;
+  padding: 10px 15px;
+  border-radius: 5px;
 }
 
 .home ul li a:hover {
@@ -80,6 +90,38 @@ body {
 
 .home a {
   color: #525252;
+}
+
+/* 響應式設計（桌機版） */
+@media (min-width: 768px) {
+  .home .content {
+    flex-direction: row; /* 大螢幕時改回橫排 */
+    justify-content: center;
+    width: 100%;
+    flex-wrap: nowrap; /* 避免內容換行 */
+    margin-top: 20px; /* 讓標題往下移動 */
+
+
+  }
+
+  .home p {
+    font-size: 135px; /* 讓桌機版的標題維持大字體 */
+    white-space: nowrap; /* 強制文字不換行 */
+
+  }
+
+  .home ul {
+    flex-direction: row; /* 桌機版選單改回橫排 */
+    justify-content: center;
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+
+  .home ul li {
+    font-size: 24px;
+    flex-grow: 1;
+    text-align: center;
+  }
 }
 
 
