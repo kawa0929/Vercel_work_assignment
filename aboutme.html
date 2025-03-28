@@ -1,48 +1,251 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>許閔慈的自我介紹</title>
-	<style>
-		.main-title {
-        font-size: 32px;
-    	}
-    	.content-text {
-        font-size: 20px;
-    	}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>許閔慈的自我介紹</title>
 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@200..900&display=swap');
+
+        /* 全域設定 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Serif HK', serif;
+            background-color: #F2EFE7;
+            font-weight: lighter;
+        }
+
+        /* 讓所有區塊都佔滿整個螢幕 */
+		section {
+		    height: 100vh; /* 每個 section 佔滿整個畫面 */
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    flex-direction: column;
+		    text-align: center;
+		}
+
+
+        /* h1 區塊 */
+        .intro {
+            color: #FFEB00;
+            font-size: 100px;
+            background-image: url(pic/blacksea.jpg);
+            opacity: 0.8;
+            filter: alpha(opacity=10);
+            background-size: cover;
+            background-position:center;
+            text-align: center;
+        }
+
+        .title-container{
+        	margin-bottom: 20px;
+        }
+
+        .content-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        }
+
+        .content-text{
+        	margin-right: 30px;
+        }
+
+        .p1-hr {
+    	margin-top: -10px;
+    	margin-bottom: 30px;
+    	width: 80%;
+		}
+
+		.info-container {
+	    display: flex;
+	    align-items: center;
+	    justify-content: center; /* 左右排列 */
+	    gap: 30px; /* 圖片和文字間距 */
+	    width: 80%; /* 限制區塊寬度 */
+	    max-width: 900px; /* 限制最大寬度 */
+		}
+
+
+		.content-image {
+    	width: 100%; /* 設定固定寬度 */
+    	max-width: 400px; /* 避免超過父容器 */
+    	height: auto; /* 保持原比例 */
+    	border-radius: 10px;
+    	object-fit: cover; /* 確保圖片不會變形 */
+		}
+
+		.text-content{
+			width: 60%;
+			text-align: left;
+		}
+
+
+		.content-hr{
+			border-color: #9ACBD0;
+			width: 100%;
+			margin: 10px 0;
+		}
+
+
+
+		.license-hr{
+			border-color: #ff9a4a; 
+			width: 100%;
+			margin: 10px 0;
+		}
+
+		.license-image {
+    	width: 100%; /* 設定固定寬度 */
+    	max-width: 400px; /* 避免超過父容器 */
+    	height: auto; /* 保持原比例 */
+    	border-radius: 10px;
+    	object-fit: cover; /* 確保圖片不會變形 */
+		}
+
+		.habit-hr{
+			border-color: #028391;
+			width: 100%;
+			margin: 10px 0;
+		}
+
+		.habit-image{
+			width: 100%; /* 設定固定寬度 */
+    		max-width: 400px; /* 避免超過父容器 */
+    		height: auto; /* 保持原比例 */
+    		border-radius: 10px;
+    		object-fit: cover; /* 確保圖片不會變形 */
+		}
+
+		footer {
+	    display: flex;
+	    justify-content: space-between; /* 讓兩側元素分散對齊 */
+	    align-items: center; /* 垂直置中 */
+	    padding: 20px;
+		}
+
+		.backindex {
+    	color: #579BB1;
+    	font-size: 20px;
+    	text-decoration: none;
+		}
+
+        /* 其他區塊 */
+        .content {
+	    height: 100vh; /* 讓 h2、h3、h4 也佔滿整個螢幕 */
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    flex-direction: column;
+	    text-align: center;
+		}
+
+        /* 主要標題 */
+        .main-title {
+            font-size: 40px;
+        }
+
+        /* 內容文字 */
+        .content-text {
+            font-size: 20px;
+        }
+
+
+
+        /* 選取時的樣式 */
+        ::selection {
+            background-color: #A9B5DF;
+            color: #FFF2F2;
+        }
+
+        /* 超連結顏色 */
+        a:link {
+            color: #00ADB5;
+        }
+
+        
+    </style>
 </head>
-<body class="aboutme" style="  background-color: #F2EFE7;
-">
-	<h1><b class="main-title">基本資料</font></b></h1>
-	<p>
-		<hr style="border-color: #ff9a4a;">
-		<b class="content-text">許閔慈 Hsu Min-Tzu</b><br>
-		<b class="content-text">就讀：靜宜大學 資訊管理學系</b><br>
-		<b class="content-text">email：<a href="mailto:melisaqq55@gmail.com">melisaqq55@gmail.com</a></b>
-	</p>
 
-	<div style="text-align:right">
-		<h1><b class="main-title">證照/比賽</font></b></h1>
-		<hr style="border-color: #ff9a4a;">
-		<b class="content-text">全民英檢初級證照</b><br>
-		<b class="content-text">普思國際英語測驗 (Aptis) 口說 B1</b><br>
-		<b class="content-text">多益綠色證書</b><br>
-		<b class="content-text">2024永續智慧創新黑客松(智慧商務組第三名)</b><br>
-	</div>
+<body>
+    <!-- 第一頁：個人簡介 -->
+    <section class="intro">
+    	<div class="title-container">
+	        <h1>個人簡介</h1>
+    	</div>
+    	<hr class="p1-hr" style="border-color: #FFEB00;">
+    	<div class="content-container">
+	        <b class="content-text">基本資料</b>
+	        <b class="content-text">證照/比賽</b>
+	        <b class="content-text">興趣專長</b>
+    	</div>
+	</section>
 
-		<h1><b class="main-title">興趣專長</font></b><br></h1>
-	<p>
-		<hr style="border-color: #ff9a4a;">
-		<b class="content-text">興趣：聽音樂、繪畫、閱讀</b><br>
-		<b class="content-text">專長：美編、彈吉他</b><br>
-	</p>
 
-<footer>
-	<p align="center">
-	<b><fontsize="2">Copyright ©  許閔慈. All Rights Reserved.</font></b>
-</footer>
+    <!-- 第二頁：基本資料 -->
+    <section class="content" style="background-color:#303841">
+    	<div class="info-container">
+        	<img src="pic/me.jpg" alt="個人照" class="content-image">
+        	<div class="text-content" style="color: white;">
+	            <h2 class="main-title">基本資料</h2>
+	            <hr class="content-hr">
+	            <p>
+	            <b class="content-text">許閔慈 Hsu Min-Tzu</b><br>
+	            <b class="content-text">就讀：靜宜大學 資訊管理學系</b><br>
+	            <b class="content-text">email：<a href="mailto:melisaqq55@gmail.com">melisaqq55@gmail.com</a></b>
+		        </p>
+	        </div>
+	    </div>
+	</section>
+
+
+
+    <!-- 第三頁：證照/比賽 -->
+    <section class="content" style="background-color: #FFF5EB">
+    	<div class="info-container">
+    		<img src="pic/license.jpg" alt="證件照" class="license-image">
+    	<div class="text-content">
+        <h3 class="main-title">證照/比賽</h3>
+        <hr class="license-hr">
+        <p>
+            <b class="content-text">全民英檢初級證照</b><br>
+            <b class="content-text">普思國際英語測驗 (Aptis) 口說 B1</b><br>
+            <b class="content-text">多益綠色證書</b><br>
+            <b class="content-text">2024永續智慧創新黑客松(智慧商務組第三名)</b><br>
+        </p>
+    </div>
+    </section>
+
+    <!-- 第四頁：興趣專長 -->
+    <section class="content" style="background-color: #C7D9DD;">
+    	<div class="info-container">
+    		<img src="pic/habit.jpg" alt="興趣照" class="habit-image">
+    	<div class="text-content" style="color: #6482AD;">
+        <h4 class="main-title">興趣專長</h4>
+        <hr class="habit-hr">
+        <p>
+            <b class="content-text">興趣：聽音樂、繪畫、閱讀</b><br>
+            <b class="content-text">專長：美編、彈吉他</b><br>
+            <a href="work.pdf" target="_blank" class="content-text" style="color:#7469B6;">☞點我看作品集</a>
+
+
+        </p>
+    </div>
+</div>
+    </section>
+
+    <footer class="footer">
+    <p><b>Copyright © 許閔慈. All Rights Reserved.</b></p>
+    <a href="index.html" class="backindex">𖤐回到首頁</a>
+	</footer>
+
 </body>
 </html>

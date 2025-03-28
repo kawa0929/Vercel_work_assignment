@@ -58,6 +58,11 @@ body {
   margin: 0;
 }
 
+.home p::selection{
+  background-color: #C7D9DD;
+  color: #ADB2D4;
+}
+
 /* 只影響首頁的選單 */
 .home ul {
   list-style: none;
