@@ -1,15 +1,310 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-	<link rel="icon" href="pic/hol.png" type="image/png">
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>許閔慈的何倫碼測驗分析</title>
+    <link rel="icon" href="pic/hol.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>許閔慈的何倫碼測驗分析</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@200..900&display=swap');
+
+        @keyframes pop-up{
+            0%{
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100%{
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        body {
+            font-family: 'Noto Serif HK', serif;
+            background-color: #ffffea;
+            font-weight: lighter;
+            margin: 0; /* 移除 body 的預設邊距 */
+		    padding: 0; /* 移除 body 的預設內邊距 */
+		    width: 100%; /* 確保 body 佔滿整個螢幕寬度 */
+		    overflow-x: hidden; /* 隱藏水平滾動條 */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        ::selection {
+            background-color: #A9B5DF;
+            color: #FFF2F2;
+        }
+
+        section {
+        width: 100%;
+	    padding: 20px; /* 增加內邊距 */
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    flex-direction: column;
+	    text-align: center;
+	    min-height: 100vh;
+	    margin: 0;
+	    padding: 0;
+		}
+
+        .hol {
+            color: #E966A0;
+            font-size: 100px;
+            background-image: url(pic/math.jpg);
+            opacity: 0.8;
+            filter: alpha(opacity=10);
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            
+        }
+
+        .hol-container h1 {
+	    font-size: 8vw; /* 根據視窗寬度調整字體大小 */
+	    color: #E966A0;
+	    text-align: center;
+	    margin-bottom: 20px;
+		}
+
+		.hol-container img {
+		    width: 150px; /* 設定按鈕圖片的寬度 */
+		    height: auto;
+		    cursor: pointer;
+		}
+
+        .botton{
+        	width: 50px;
+        	height: auto;
+        }
+
+        section.hol{
+        	height: 100vh;
+        	display: flex;
+        	align-items: center;
+        	justify-content: center;
+        	flex-direction: column;
+        	text-align: center;
+        	padding: 0 20px;
+        }
+
+        .hol-container {
+        	display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px; /* 控制 h1 和圖片的間距 */
+            margin-bottom: 20px;
+    		opacity: 0;
+    		animation: pop-up 1s ease-out forwards;
+        }
+
+        .result-hr{
+        	border-color: #EDB2A0;
+			width: 100%;
+			margin: 10px 0;
+        }
+
+        .main-text{
+        	font-size: 35px;
+        }
+
+        .context-text{
+        	font-size: 30px;
+        }
+
+        .job-hr{
+        	border-color: #ABC270;
+			width: 100%;
+			margin: 10px 0;
+        }
+
+        
+
+        .hol1, .hol2 {
+            width: auto; /* 設定固定寬度 */
+            max-width: 600px; /* 避免超過父容器 */
+	    	height: auto; /* 保持原比例 */
+	    	border-radius: 10px;
+	    	object-fit: cover; /* 確保圖片不會變形 */
+	    	
+            
+        }
+
+        .content {
+	    min-height: 100vh;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    flex-direction: row;
+	    text-align: left;
+	    gap: 40px;
+	    padding: 0 5%;
+	    width: 100%; /* 讓內容區域可以自動擴展 */
+	    box-sizing: border-box;
+		}
+
+		.content img{
+			max-width: 50%;
+			height: auto;
+			border-radius: 10px;
+		}
+
+		.content p {
+	    max-width: 100%; /* 限制段落的最大寬度 */
+	    margin: 0 auto; /* 讓文字置中 */
+		}
+
+        
+
+        .footer {
+            margin-top: auto; /* 讓 footer 保持在最底部 */
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		    padding: 20px;
+		    background-color: #f0f0f0;
+		    text-align: center;
+		    width: 100%;
+        }
+
+        .backindex {
+            color: #E966A0;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+			.hol-container {
+		        flex-direction: column; /* 在手機版時改為直向排列 */
+		        text-align: center;
+		        gap: 10px; /* 設定標題和圖片的間距 */
+		    }
+
+		    .hol-container h1 {
+		        font-size: 80px;
+			    color: #E966A0;
+			    display: flex;
+			    flex-direction: column; /* 垂直排列文字 */
+			    align-items: center; /* 文字水平置中 */
+			    gap: 10px; /* 文字間隔 */
+		    }
+
+		    .hol-container img {
+		        width: 150px; /* 設定圖片大小 */
+		        height: auto;
+		    }
+
+		    .content {
+		        flex-direction: column; /* 內容區域垂直排列 */
+		        text-align: center;
+		        gap: 20px;
+		        width: 90%; /* 增加範圍，讓內容更好閱讀 */
+		        margin: 0 auto; /* 置中 */
+		        padding: 0 5%;
+		    	}
+
+			    .content img {
+			        max-width: 80%;
+				    height: auto; /* 保持比例 */
+				    display: block;
+				    margin: 0 auto; 
+			    }
+
+			    .main-text {
+			        font-size: 30px; /* 縮小標題 */
+			    }
+
+			    .content-text {
+			        font-size: 20px; /* 讓內容文字更適合手機閱讀 */
+			        max-width: 100%; /* 避免超出範圍 */
+			    }
+
+			    .content p {
+			        max-width: 90%; /* 限制段落的最大寬度 */
+			        margin: 0 auto; /* 讓文字置中 */
+			    }
+
+	            footer {
+		        flex-direction: column;
+		        text-align: center;
+		        padding: 15px;
+		    	}
+        }
+    </style>
 </head>
-<body class="hol" style="background-color: #ffffea;">
-	<h1>我的何倫碼測驗結果</h1>
-	<img src="pic/hollandcode1.png" width="60%" alt="何倫碼">
-	<h1>AS型多從事哪些與MIS相關的工作呢?</h1>
-	<img src="pic/hollandcode2.png" width="60%" alt="結果">
+<body>
+    <section class="hol">
+        <div class="hol-container">
+            <h1 style="font-size: 80px;">我的何倫碼測驗結果</h1>
+            <img src="pic/yestouch.png" class="button" id="touchBtn">
+        </div>
+    </section>
+
+    <section class="content" style="background-color:#CDE8E5" id="result">
+    	<img src="pic/hollandcode1.png" alt="何倫碼" class="hol1">
+    	<div>
+        <h2 class="main-text">結果分析</h2>
+        <hr class="result-hr">
+        <p>
+        	<b class="content-text" style="color:#376074">我的何倫碼結果為A藝術型 x S社會型</b><br>
+        	<br>
+        	<b class="content-text">A藝術型：</b><br>
+			<b class="content-text" style="color:#3D4548">直覺敏銳、善於表達和創新。他們希望藉由文字、聲音、色彩或形式來表達創造力和美的感受。喜歡獨立作業，但不希望被忽略，在無拘無束的環境下工作效率最好。生活的目的是創造不平凡的事務，不喜歡管人和被人管朋友關係比較隨興。</b><br>
+			<br>
+			<b class="content-text">S社會型：</b><br>
+			<b class="content-text" style="color:#3D4548">對人和善，容易相處，他們關心自己和別人的感受，喜歡傾聽和了解別人，也願意付出時間和精力去解決別人的衝突，喜歡教導別人，並幫助他人成長。不愛競爭，喜歡大家一起作事，一起為團體盡力。交友廣闊，關心別人勝於關心工作。</b>
+        </p>
+        </div>      
+    </section>
+
+    <section class="content" style="background-color:#D5E5D5;" id="job">
+    	<img src="pic/hollandcode2.png" alt="結果" class="hol2">
+    	<div>
+        <h2 class="main-text">AS型多從事哪些與MIS相關的工作呢?</h2>
+        <hr class="job-hr">
+        <p>
+        	<b class="content-text">AS型很適合從事：</b><br>
+        	<b class="content-text" style="color: #5c34aa;">網頁設計、使用者體驗（UX）、使用者介面（UI）、多媒體技術應用領域</b><br>
+        	<br>
+        	<b class="content-text" style="color:#E95F56">1. 網頁設計師（Web Designer）</b><br>
+        	<b class="content-text">✱ 需要掌握 HTML、CSS、JavaScript，並了解網站架構、使用者體驗與前端技術。</b><br>
+        	<b class="content-text">✱ 若涉及後端開發或資料庫應用，則與 MIS 關聯更深。</b><br>
+        	<br>
+        	<b class="content-text" style="color:#E95F56">2. UI 設計師（UI Designer）</b><br>
+        	<b class="content-text">✱ 專注於使用者介面的視覺設計，可能需要與前端工程師合作，了解系統需求。</b><br>
+        	<br>
+        	<b class="content-text" style="color:#E95F56">3. UX 設計師（UX Designer）</b><br>
+        	<b class="content-text">✱ 研究使用者體驗，優化網站或應用程式的互動設計，可能會使用數據分析來改善設計。</b><br>
+        	<br>
+        	<b class="content-text" style="color:#E95F56">4. 多媒體開發主管</b><br>
+        	<b class="content-text">✱ 若負責與資訊系統、應用開發或數位產品相關的多媒體技術，則與 MIS 有關。</b><br>
+
+
+        </p>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById("touchBtn").addEventListener("click", function () {
+            // 切換圖片
+            this.src = "pic/touch.png";
+
+            // 延遲 500 毫秒後滾動到結果區塊
+            setTimeout(function () {
+                document.getElementById("result").scrollIntoView({ behavior: "smooth" });
+            }, 500);
+        });
+    </script>
+
+    <footer class="footer">
+        <p><b>Copyright © 許閔慈. All Rights Reserved.</b></p>
+        <a href="index.html" class="backindex">𖤐回到首頁</a>
+    </footer>
 </body>
 </html>

@@ -60,7 +60,7 @@
         .title-container{
         	margin-bottom: 20px;
         	opacity: 0;
-        	animation: pop-up 1s ease-out forwards;
+            transform: scale(0.8);
         }
 
         .content-container{
@@ -68,7 +68,7 @@
         flex-direction: row;
         align-items: center;
         opacity: 0;
-        animation: pop-up 1s ease-out forwards;
+        transform: scale(0.8);  
         }
 
         .content-text{
@@ -98,7 +98,7 @@
     	border-radius: 10px;
     	object-fit: cover; /* 確保圖片不會變形 */
     	opacity: 0;
-        animation: pop-up 1s ease-out forwards;
+        transform: scale(0.8);
 		}
 
 		.text-content{
@@ -128,7 +128,7 @@
     	border-radius: 10px;
     	object-fit: cover; /* 確保圖片不會變形 */
     	opacity: 0;
-        animation: pop-up 1s ease-out forwards;
+        transform: scale(0.8);
 		}
 
 		.habit-hr{
@@ -144,8 +144,12 @@
     		border-radius: 10px;
     		object-fit: cover; /* 確保圖片不會變形 */
     		opacity: 0;
-        	animation: pop-up 1s ease-out forwards;
+            transform: scale(0.8);
 		}
+
+        .animate {
+        animation: pop-up 1s ease-out forwards;
+        }
 
 		footer {
 	    display: flex;
@@ -309,6 +313,23 @@
     <p><b>Copyright © 許閔慈. All Rights Reserved.</b></p>
     <a href="index.html" class="backindex">𖤐回到首頁</a>
 	</footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+            }
+        });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.title-container, .content-container, .content-image, .license-image, .habit-image').forEach(el => {
+        observer.observe(el);
+    });
+});
+</script>
+
 
 </body>
 </html>
