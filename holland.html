@@ -67,10 +67,12 @@
         }
 
         .hol-container h1 {
-	    font-size: 8vw; /* 根據視窗寬度調整字體大小 */
+	    font-size: 80px;"
 	    color: #E966A0;
-	    text-align: center;
 	    margin-bottom: 20px;
+        opacity: 0;
+        transform: scale(0.8);
+        animation: pop-up 1s forwards;
 		}
 
 		.hol-container img {
@@ -111,11 +113,11 @@
         }
 
         .main-text{
-        	font-size: 35px;
+        	font-size: 36px;
         }
 
         .context-text{
-        	font-size: 30px;
+        	font-size: 45px;
         }
 
         .job-hr{
@@ -180,6 +182,10 @@
         }
 
         @media (max-width: 768px) {
+        	.hol{
+        		font-size: 40px;
+				padding: 30px 10px;
+        	}
 			.hol-container {
 		        flex-direction: column; /* 在手機版時改為直向排列 */
 		        text-align: center;
@@ -187,16 +193,14 @@
 		    }
 
 		    .hol-container h1 {
-		        font-size: 80px;
+		        font-size: 43px;
 			    color: #E966A0;
 			    display: flex;
-			    flex-direction: column; /* 垂直排列文字 */
-			    align-items: center; /* 文字水平置中 */
-			    gap: 10px; /* 文字間隔 */
+			    
 		    }
 
 		    .hol-container img {
-		        width: 150px; /* 設定圖片大小 */
+		        width: 95px; /* 設定圖片大小 */
 		        height: auto;
 		    }
 
@@ -241,7 +245,7 @@
 <body>
     <section class="hol">
         <div class="hol-container">
-            <h1 style="font-size: 80px;">我的何倫碼測驗結果</h1>
+            <h1>我的何倫碼測驗結果</h1>
             <img src="pic/yestouch.png" class="button" id="touchBtn">
         </div>
     </section>
