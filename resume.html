@@ -6,7 +6,352 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>求職履歷與未來展望</title>
 </head>
-<body class="res" style="background-color: #FFFDF0;">
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@200..900&display=swap');
+
+	@keyframes pop-up{
+        	0%{
+        		transform: scale(0.8);
+        		opacity: 0;
+        	}
+        	100%{
+        		transform: scale(1);
+        		opacity: 1;
+        	}
+    }
+
+    .res{
+    	color: #7AB2B2;
+		font-size: 100px;
+		background-image: url(pic/dream.jpg);
+		opacity: 0.8;
+        filter: alpha(opacity=10);
+        background-size: cover;
+        background-position:center;
+        text-align: center;
+
+    }
+
+    .res-hr {
+		margin-top: -10px;
+    	margin-bottom: 30px;
+    	width: 80%;
+	}
+
+	.content-container{
+		display: flex;
+        flex-direction: row;
+        align-items: center;
+        opacity: 0;
+        transform: scale(0.8);
+        animation: pop-up 1s forwards;
+	}
+
+	.res-container h1{
+		margin-top: -5px;
+		margin-bottom: 20px;
+        opacity: 0;
+        transform: scale(0.8);
+        animation: pop-up 1s forwards;
+	}
+
+    .nav-link {
+    	margin-right: 15px;
+	    font-size: 20px; /* 確保字體大小與原本一致 */
+	    font-weight: bold; /* 讓字體維持加粗 */
+	    color: #7AB2B2; /* 設定字體顏色 */
+	    text-decoration: none; /* 移除底線 */
+	}
+
+	.nav-link:last-child {
+		    margin-right: 0; /* 避免最後一個連結多出額外間距 */
+	}
+
+	.nav-link:hover {
+		    text-decoration: underline; /* 滑鼠懸停時增加底線 */
+	}
+
+    body {
+            font-family: 'Noto Serif HK', serif;
+            background-color: #F2EFE7;
+            font-weight: lighter;
+            margin: 0;
+		    padding: 0;
+		    width: 100%;
+		    height: 100%;
+		    min-height: 100vh;
+    }
+
+	section {
+		    height: 100vh; /* 每個 section 佔滿整個畫面 */
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    flex-direction: column;
+		    text-align: center;
+	}
+
+	.me-container ,.skill-container, .future-container, .work-container {
+	    display: flex;
+	    align-items: center;
+	    justify-content: center; /* 左右排列 */
+	    gap: 30px; /* 圖片和文字間距 */
+	    width: 80%; /* 限制區塊寬度 */
+	    max-width: 900px; /* 限制最大寬度 */
+	    text-align: left;
+	    opacity: 0;
+        transform: scale(0.8);
+        animation: pop-up 1s forwards;
+		}
+
+	.me-image, .skill-image, .future-image ,.work-image {
+    	width: 100%; /* 設定固定寬度 */
+    	max-width: 400px; /* 避免超過父容器 */
+    	height: auto; /* 保持原比例 */
+    	border-radius: 10px;
+    	margin-bottom: 15px;
+    	object-fit: cover; /* 確保圖片不會變形 */
+    	opacity: 0;
+        transform: scale(0.8);
+        animation: pop-up 1s forwards;
+	}
+
+	.me-hr, .skill-hr, .future-hr ,.work-hr{
+		width: 100%;
+		margin-top: 1px;
 	
+	}
+
+
+	.main-title {
+    font-size: 34px;
+    margin-bottom: 10px;
+	}
+
+    .text-content {
+    max-width: 50%;
+    padding: 20px;
+	}
+
+        /* 內容文字 */
+    .content-text {
+    font-size: 20px;
+    line-height: 1.5;
+	    }
+
+	.content-text ul {
+    list-style-position: inside; /* 列點靠近文字 */
+    padding-left: 0; /* 移除額外邊距 */
+	}
+
+	.content-text li {
+	    margin-bottom: 10px;
+	}
+
+	::selection {
+            background-color: #A9B5DF;
+            color: #FFF2F2;
+        }
+
+    .backindex{
+		color: #567189;
+    	font-size: 20px;
+    	text-decoration: none;
+	}
+
+    footer {
+	    display: flex;
+	    justify-content: space-between; /* 讓兩側元素分散對齊 */
+	    align-items: center; /* 垂直置中 */
+	    padding: 20px;
+	    height: 30px;
+	}
+
+	@media screen and (max-width: 768px) {
+	    .future-container {
+	        flex-direction: column;
+	        text-align: center;
+	    }
+	    .future-image {
+	        max-width: 80%;
+	    }
+	    .text-content {
+	        max-width: 90%;
+	    }
+
+
+		.res h1{
+			font-size: 50px;
+		}
+
+		.me-container, .skill-container, .work-container {
+        flex-direction: column; /* 改為上下排列 */
+	    align-items: center; /* 垂直居中 */
+	    text-align: center; /* 文字置中 */
+	    gap: 20px;
+	    padding: 20px; /* 增加內邊距，避免內容過於緊湊 */
+    	}
+
+    	.me-image, .skill-image,.work-image {
+	    max-width: 80%; /* 圖片寬度不超過容器 */
+	    margin-bottom: 10px; /* 與文字保持適當距離 */
+		}
+
+        .res {
+                font-size: 40px;
+        }
+
+        .nav-link {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 18px;
+    	}
+
+        .content-container {
+                flex-direction: column;
+        }
+
+        .text-content {
+        max-width: 90%; /* 讓內容區域更寬鬆 */
+        padding: 20px;
+    	}
+
+        .content-text {
+            font-size: 16px; /* 小螢幕上縮小文字大小 */
+        	line-height: 1.6; /* 調整行距以適配窄螢幕 */
+        }
+
+        .content-text b {
+	    display: block; /* 每個列表項目獨立成一行 */
+	    margin-bottom: 10px; /* 增加項目之間的間距 */
+		}
+
+		.main-title {
+        font-size: 24px; /* 小螢幕縮小標題字體大小 */
+        margin-top: 5px;
+    	}
+
+    	#future {
+	    min-height: 120vh; /* 讓區塊至少有 120% 的視窗高度 */
+	    padding: 50px 0; /* 增加內邊距，避免內容過於擁擠 */
+		}
+
+        footer {
+	        min-height: 30px; /* 確保至少 80px 高 */
+		    padding: 10px 0;
+		    flex-direction: column;
+		    text-align: center;
+	    }
+
+
+
+    }
+</style>
+
+<body>
+	<section class="res">
+		<div class="res-container">
+			<h1 style="color:#57A6A1">求職履歷</h1>
+		</div>
+		<hr class="res-hr" style="border-color: #0E46A3;">
+		<div class="content-container">
+	        <a href="#basic-info" class="nav-link">About Me</a>
+	        <a href="#skill" class="nav-link">目前所學技能</a>
+	        <a href="#future" class="nav-link">未來規劃</a>
+	        <a href="#work" class="nav-link">為何適合這個職位</a>
+    		</div>
+		</div>
+	</section>
+	<section id="basic-info" class="content" style="background-color:#EEF5FF">
+	    <div class="me-container">
+	        <img src="pic/aboutme.jpg" alt="關於我" class="me-image">
+	        <div class="text-content">
+	            <h2 class="main-title" style="margin-bottom: 5px;">About Me</h2>
+	            <hr class="me-hr" style="border-color: #155E95;">
+	            <p>
+	                <b class="content-text">我是許閔慈，目前就讀靜宜大學資訊管理學系二年級。</b><br>
+	                <b class="content-text">對我來說，程式設計不僅是一種技能，也是一種表達創意的方式，因此我非常期待能夠勝任Web前端工程師這個職位。</b><br>
+	                <b class="content-text">雖然我還在學習階段，但我相信我所學到的技能可以幫助我在這個工作中發揮所長。
+
+</a></b>
+	            </p>
+	        </div>
+	    </div>
+	</section>
+
+	<section id="skill" class="content" style="background-color: #FAF2D3">
+	    <div class="skill-container">
+	        <img src="pic/skill.jpg" alt="技能" class="skill-image">
+	        <div class="text-content">
+	            <h3 class="main-title" style="margin-bottom: 5px;">目前所學技能</h3>
+	            <hr class="skill-hr" style="border-color: #FADA7A;">
+	            <p>
+	                <b class="content-text">在課程中，我學到了Java、HTML、CSS、Python等技術，這些基礎讓我對程式設計有了一定的了解。</b><br>
+	                <b class="content-text">對於Web開發，我對前端技術特別有興趣，並且在學習中使用過Visual Studio Code（VSC）進行編碼與專案開發。</b><br>
+	                <b class="content-text">目前主要是學習基礎知識，但我已經開始嘗試將這些技術結合起來，製作一些簡單的網頁，並學習如何透過CSS與HTML來創建美觀且互動性強的頁面。</b>
+	            </p>
+	        </div>
+	    </div>
+	</section>
+
+	<section id="future" class="content" style="background-color: #CCD3CA;">
+	    <div class="future-container">
+	        <img src="pic/future.jpg" alt="未來" class="future-image">
+	        <div class="text-content">
+	            <h4 class="main-title" style="margin-bottom: 5px;">未來規劃</h4>
+	            <hr class="future-hr" style="border-color: #8D77AB;">
+	            <b class="content-text">
+	            	雖然我現在的技能還在成長中，但我有明確的規劃來充實自己。未來兩年，我打算提升自己對於前端框架的熟悉度以及英文能力。</b><br>
+	            </b>
+	            <ul class="content-text">
+	                <li><b style="color:#8D77AB">多益目標600分以上➢</b> 課餘時間多背單字和練習題目</li>
+	                <li><b style="color:#8D77AB">提升競賽量➢</b>
+	                多上”賞金獵人”網站選比賽報名</li>
+	                <li><b style="color:#8D77AB">學習Vue.js前端框架➢</b> 這次做網頁的經驗，讓我更能感受到如果沒有規劃好程式就很容易導致效能下降。因此我需要學習前端框架，讓我以後做網頁能花更少時間並提升效能。</li>
+	                <li><b style="color:#8D77AB">學習Adobe Illustrator(AI)➢</b> 身為創作者必備工具之一，對於工作上是絕對的加分項，利用閒暇之餘，我會透過影片或借書修習這方面的知識。</li>
+	            </ul>
+	            <b class="content-text">
+	                這樣不僅能讓我更有信心，也能讓我更快適應實際工作中的挑戰。
+	            </b>
+	        </div>
+	    </div>
+	</section>
+
+	<section id="work" class="content" style="background-color: #B5C0D0;">
+	    <div class="work-container">
+	        <img src="pic/work1.jpg" alt="工作" class="work-image">
+	        <div class="text-content">
+	            <h4 class="main-title" style="margin-bottom: 5px;">為何適合這個職位</h4>
+	            <hr class="work-hr" style="border-color: #205781;">
+	            <p>
+	                <b class="content-text">我對美編、繪畫非常有興趣，在製作網頁的過程中，我有信心利用我的美感讓平淡的網頁煥然一新。<br>基於目前所學的技能，我相信自己有能力在這個職位中有所貢獻。<br>無論是對前端技術的基礎了解，還是對使用者介面的設計，這些都能讓我在工作中逐步發揮。</b><br>
+	                <b class="content-text">雖然我還有很多需要學習的地方，但我有足夠的熱情和學習力，會持續進步，並在工作中快速適應。</b><br>
+	            </p>
+	        </div>
+	    </div>
+	</section>
+
+	<footer class="footer">
+	    <p><b>Copyright © 許閔慈. All Rights Reserved.</b></p>
+	    <a href="index.html" class="backindex">𖤐回到首頁</a>
+	</footer>
+
+	<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+            }
+        });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.title-container, .content-container, .content-image, .license-image, .habit-image').forEach(el => {
+        observer.observe(el);
+	    });
+	});
+	</script>
+
 </body>
 </html>

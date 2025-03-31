@@ -61,11 +61,25 @@
 	}
 
 	.mis-hr {
-		border-color: #FFEB00;
+		border-color: #FFC93C;
     	margin-top: -10px;
     	margin-bottom: 30px;
     	width: 80%;
 		}
+
+	.content {
+	    min-height: 100vh;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    flex-direction: row;
+	    text-align: left;
+	    gap: 40px;
+	    padding: 0 5%;
+	    width: 100%; /* 讓內容區域可以自動擴展 */
+	    box-sizing: border-box;
+	}
+
 
 	.introduce-container{
 		font-size: 20px;
@@ -77,7 +91,25 @@
         animation: pop-up 1s forwards;
 	}
 
+	.intro-hr{
+		border-color: #028391;
+		width: 100%;
+		margin: 10px 0;
+	}
+
 	.info-container{
+		display: flex;
+	    flex-direction: row; /* 讓圖片和文字橫向排列 */
+	    align-items: center;
+	    justify-content: center;
+	    gap: 20px;
+	    flex-wrap: nowrap; /* 若螢幕太小則換行 */
+	    max-width: 80%;
+	    margin: auto;
+	    text-align: left; /* 避免文字區塊置中 */
+	}
+
+	.job-container{
 		display: flex;
 	    flex-direction: row; /* 讓圖片和文字橫向排列 */
 	    align-items: center;
@@ -89,8 +121,8 @@
 	    text-align: left; /* 避免文字區塊置中 */
 	}
 
-	.design-image {
-    	width: 100%; /* 設定固定寬度 */
+	.design-image,.webjob-image{
+		width: 100%; /* 設定固定寬度 */
     	max-width: 400px; /* 避免超過父容器 */
     	height: auto; /* 保持原比例 */
     	border-radius: 10px;
@@ -98,12 +130,6 @@
     	opacity: 0;
         transform: scale(0.8);
         animation: pop-up 1s forwards;
-	}
-
-	.intro-hr{
-		border-color: #028391;
-		width: 100%;
-		margin: 10px 0;
 	}
 
 	.main-title {
@@ -115,6 +141,13 @@
     	font-size: 20px;
         max-width: 600px;
         text-align: left;
+        max-width: 600px;
+    }
+
+    .job-hr{
+    	border-color: #028391;
+		width: 100%;
+		margin: 10px 0;
     }
 
 
@@ -134,6 +167,7 @@
 	    justify-content: space-between; /* 讓兩側元素分散對齊 */
 	    align-items: center; /* 垂直置中 */
 	    padding: 20px;
+	    height: 30px;
 	}
 
 	@media (max-width: 768px) {
@@ -167,12 +201,18 @@
 			}
 
 			.content-text {
-				font-size: 16px;
+				font-size: 100%;
+				text-align: center;
 			}
 
 			footer {
 				flex-direction: column;
 				align-items: center;
+			}
+
+			.design-image{
+				width: 80%;
+				max-width: 300px;
 			}
 		}
 
@@ -190,7 +230,7 @@
 		</div>
 		<hr class="mis-hr">
 		<div class="introduce-container">
-			<p>網頁設計師（Web Designer）</p>
+			<b>網頁設計師（Web Designer）</b>
 		</div>
 		</div>
 	</section>
@@ -205,6 +245,22 @@
 					<b class="content-text">Web前端工程師是網頁設計師行業內的其中一個分支，是我很有興趣、也是我目前正在學習的領域。</b><br><br>
 					<b class="content-text">作為前端工程師，需要具備許多條件，如:客戶溝通、設計概念實體化、網頁程式與優化，且現在的網頁程式設計師不只是要寫電腦網頁，有時候也會要設計不同裝置網頁。因此要多接觸其他裝置，如：智慧型手機、穿戴型裝置。
 					</b>
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="job" class="content" style="background-color:#E0E5B6">
+		<div class="job-container">
+			<img src="pic/webjob.png" alt="工作截圖" class="webjob-image">
+			<div class="text-content">
+				<h2 class="main-title">104人力銀行上有興趣的職缺</h2>
+				<hr class="job-hr">
+				<p>
+					<b class="content-text">公司：乒乓話網股份有限公司</b><br>
+					<b class="content-text">職缺：Web前端工程師</b><br><br>
+					<b class="content-text">工作需求：</b><br>
+					<b class="content-text">✱ 會使用AI、熟悉Vue.js、會用任一前端框架<br>✱具有整合 javascript ( 或 jQuery ) widget 的能力與開發使用者介面<br>✱對使用者介面細項的美感 ✱與後端介接資料之經驗<br>✱具備手機平台與平板電腦頁面排版經驗<br> ✱懂RWD、PWA尤佳 <br> ✱與客戶溝通、對行銷業務有興趣尤佳</b>
 				</p>
 			</div>
 		</div>
