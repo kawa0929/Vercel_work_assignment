@@ -21,6 +21,14 @@
         	}
     }
 
+    @supports (-webkit-touch-callout: none) {
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap; /* 讓 Safari 也能正確處理 */
+    }
+}
+
     body {
             font-family: 'Noto Serif HK', serif;
             background-color: #F2EFE7;
